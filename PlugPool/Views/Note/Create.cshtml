@@ -1,0 +1,30 @@
+﻿@model PlugPool.ViewModels.Notes.CreateViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h4>Create Note</h4>
+
+<div> Please leave a note for the user explaining why their profile hasn't been approved.</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <div>
+        Note :
+        @Html.TextAreaFor(x => x.note)
+        <br /> @Html.ValidationMessageFor(x => x.note)
+    </div>
+
+    <br />
+    <input type="submit" value="Create" />
+
+}
+
+
+
+
+

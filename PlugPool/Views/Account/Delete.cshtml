@@ -1,0 +1,58 @@
+﻿@model PlugPool.ViewModels.Accounts.DeleteViewModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+@Html.Partial("_Message")
+
+<p>Are you sure you want to delete your account with us?</p>
+
+<div>
+        @Html.DisplayNameFor(model => model.firstName)
+    </div>
+    <div>
+        @Html.DisplayFor(model => model.firstName)
+    </div>
+
+<div>
+        @Html.DisplayNameFor(model => model.lastName)
+    </div>
+    <div>
+        @Html.DisplayFor(model => model.lastName)
+    </div>
+
+<div>
+        @Html.DisplayNameFor(model => model.email)
+    </div>
+    <div>
+        @Html.DisplayFor(model => model.email)
+    </div>
+
+<div>
+        @Html.DisplayNameFor(model => model.createDate)
+    </div>
+    <div>
+        @Html.DisplayFor(model => model.createDate)
+    </div>
+
+<div>
+        @Html.DisplayNameFor(model => model.updateDate)
+    </div>
+    <div>
+        @Html.DisplayFor(model => model.updateDate)
+    </div>
+
+<div>
+        @using (Html.BeginForm())
+        {
+            <input type="submit" value="Delete"/>
+            @Html.ActionLink("Back", "AccountDetails", new { id = Model.accountID })
+        }
+
+</div>
+
+
+

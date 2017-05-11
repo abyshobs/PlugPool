@@ -1,0 +1,36 @@
+﻿@model PlugPool.ViewModels.Profiles.ImageCreateViewModel
+@{
+    ViewBag.Title = "AddProfileImage";
+}
+
+@Html.Partial("_Message")
+
+<h4 class="page-header">Upload Profile Images </h4>
+<p> It's essential to upload images if it's relevant to your job
+    <br/> Models, Photographers, Make Up Artists need to upload images
+    <br/> for their application to get approved.</p>
+
+<p> The upload limit is 5 images. So upload your 5 best pics !</p>
+
+@using (Html.BeginForm("AddProfileImage", "Profile", FormMethod.Post,
+                            new { enctype = "multipart/form-data" }))
+{
+    <div>
+        <input type="file" name="file" id="file" style="width: 100%;" />
+        <br />
+
+        <div>
+            @Html.LabelFor(m => m.caption)
+            @Html.TextBoxFor(m => m.caption)
+        </div>
+
+        <input type="submit" value="Upload" class="submit" />
+    </div>
+}
+
+@Html.ActionLink("Submit Profile", "ApplicationConfirmation", new { @class = "btn btn-default" })
+
+<div>
+    @Html.Action("ProfileImageIndex", "Profile", new { area = "" })
+</div>
+

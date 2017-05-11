@@ -1,0 +1,38 @@
+﻿@model PlugPool.ViewModels.Admins.CreateViewModel
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        @Html.Partial("_Message")
+
+        <div>
+            @Html.LabelFor(m => m.permissionID)
+            <div>
+                @Html.DropDownListFor(m => m.permissionID, new SelectList(Model.Permissions, "permissionID", "name"), "Select a Permission", new { @class = "form-control" })
+                <br /> @Html.ValidationMessageFor(model => model.permissionID)
+            </div>
+        </div>
+
+        <div>
+            Email :
+            @Html.EditorFor(x => x.email)
+            <br /> @Html.ValidationMessageFor(x => x.email)
+        </div>
+
+        <br />
+        <input type="submit" value="Submit" />
+        <br />
+        <a href="@Url.Action("Index", "Admin")"> View All </a>
+    }
+</div>
+
+
+

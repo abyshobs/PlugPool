@@ -1,0 +1,27 @@
+﻿@model PlugPool.ViewModels.Jobs.EditViewModel
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+
+    @Html.HiddenFor(model => model.jobID)
+
+    <div>
+        @Html.LabelFor(model => model.name)
+        <div>
+            @Html.EditorFor(model => model.name)
+            @Html.ValidationMessageFor(model => model.name)
+        </div>
+    </div>
+
+    <br />
+    <input type="submit" value="Submit" />
+    
+}
+

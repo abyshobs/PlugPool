@@ -1,0 +1,74 @@
+﻿@model PlugPool.ViewModels.Profiles.CreateViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@Html.Partial("_Message")
+
+<h4>Create Profile</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <div>
+        @Html.LabelFor(m => m.jobID) <br/>
+        @Html.DropDownListFor(m => m.jobID, new SelectList(Model.Jobs, "jobID", "name"), "Select a job")
+        @Html.ValidationMessageFor(m => m.jobID)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.businessName)<br/>
+        @Html.TextBoxFor(m => m.businessName)
+        @Html.ValidationMessageFor(m => m.businessName)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.location)<br />
+        @Html.TextBoxFor(m => m.location)
+        @Html.ValidationMessageFor(m => m.location)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.description)<br />
+        @Html.TextAreaFor(m => m.description)
+        @Html.ValidationMessageFor(m => m.description)
+    </div>
+
+    @*<div>
+        @Html.LabelFor(m => m.startYear)<br />
+        @Html.TextBoxFor(m => m.startYear)
+        @Html.ValidationMessageFor(m => m.startYear)
+    </div>*@
+
+    <div>
+        @Html.LabelFor(m => m.website)<br />
+        @Html.TextBoxFor(m => m.website)
+        @Html.ValidationMessageFor(m => m.website)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.youtube)<br />
+        @Html.TextBoxFor(m => m.youtube)
+        @Html.ValidationMessageFor(m => m.youtube)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.additionalInfo)<br />
+        @Html.TextAreaFor(m => m.additionalInfo)
+        @Html.ValidationMessageFor(m => m.additionalInfo)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.userName)<br />
+        @Html.TextBoxFor(m => m.userName)
+        @Html.ValidationMessageFor(m => m.userName)
+    </div>
+
+    <br/>
+    <div>
+        <input type="submit" value="Next"/>
+    </div>
+}
+

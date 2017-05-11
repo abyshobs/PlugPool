@@ -1,0 +1,17 @@
+﻿@model PlugPool.ViewModels.Jobs.IndexViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div>
+    @Html.Partial("_Jobs", Model.Jobs)
+</div>
+
+<div>
+    <br />
+    @Html.ActionLink("Create", "Create")
+</div>
+

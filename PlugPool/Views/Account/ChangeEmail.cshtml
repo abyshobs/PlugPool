@@ -1,0 +1,26 @@
+﻿@model PlugPool.ViewModels.Accounts.ChangeEmailViewModel
+@{
+    ViewBag.Title = "ChangeEmail";
+}
+
+<h2>Change Email</h2>
+@Html.Partial("_Message")
+
+@using (Html.BeginForm())
+                        {
+    @Html.ValidationSummary(true)
+
+    <div>
+        @Html.LabelFor(m => m.email)
+        <div>
+            @Html.TextBoxFor(m => m.email)
+            @Html.ValidationMessageFor(m => m.email)
+        </div>
+    </div>
+
+    <div>
+            <input type="submit" value="Submit" />
+            @Html.ActionLink("Back", "AccountDetails", new { id = Model.accountID })
+        </div>
+}
+

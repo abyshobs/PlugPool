@@ -1,0 +1,113 @@
+﻿@model PlugPool.ViewModels.Profiles.EditViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit Profile</h2>
+
+@*@using (Html.BeginForm("EditProfile", "Profile", FormMethod.Post))*@
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+        @Html.HiddenFor(model => model.profileID)
+        @Html.HiddenFor(model => model.accountID)
+
+        <div>
+                @Html.DisplayNameFor(model => model.jobID)
+            </div>
+            <div>
+                @Html.DropDownListFor(m => m.jobID, new SelectList(Model.Jobs, "jobID", "name"), "Select a job")
+            </div>
+
+
+        <div>
+                @Html.DisplayNameFor(model => model.profilePic)
+            </div>
+            <div>
+                <img src="@Url.Action("AvatarImg", "Profile", new { id = Model.Account.accountID })" height="150" width="150" alt="profilePic" />
+                @Html.ActionLink("Change Profile Photo", "AvatarUpload", new { id = Model.profileID }) <br />
+            </div>
+
+        <div>
+                @Html.DisplayNameFor(model => model.firstName)
+            </div>
+            <div>
+                @Html.EditorFor(model => model.firstName)
+                @Html.ValidationMessageFor(model => model.firstName)
+            </div>
+
+        <div>
+                @Html.DisplayNameFor(model => model.lastName)
+            </div>
+            <div>
+                @Html.EditorFor(model => model.lastName)
+                @Html.ValidationMessageFor(model => model.lastName)
+            </div>
+
+        <div>
+                @Html.DisplayNameFor(model => model.email)
+            </div>
+            <div>
+                @Html.DisplayFor(model => model.Account.email)
+                <br /> <a href="@Url.Action("ChangeEmail", "Account")">Change Email</a>
+            </div>
+
+        <div>
+                @Html.DisplayNameFor(model => model.businessName)
+            </div>
+            <div>
+                @Html.EditorFor(model => model.businessName)
+                @Html.ValidationMessageFor(model => model.businessName)
+            </div>
+
+    <div>
+        @Html.DisplayNameFor(model => model.location)
+    </div>
+    <div>
+        @Html.EditorFor(model => model.location)
+        @Html.ValidationMessageFor(model => model.location)
+    </div>
+
+    <div>
+        @Html.DisplayNameFor(model => model.website)
+    </div>
+    <div>
+        @Html.EditorFor(model => model.website)
+        @Html.ValidationMessageFor(model => model.website)
+    </div>
+
+    <div>
+        @Html.DisplayNameFor(model => model.youtube)
+    </div>
+    <div>
+        @Html.EditorFor(model => model.youtube)
+        @Html.ValidationMessageFor(model => model.youtube)
+    </div>
+
+    <div>
+        @Html.DisplayNameFor(model => model.startYear)
+    </div>
+    <div>
+        @Html.EditorFor(model => model.startYear)
+        @Html.ValidationMessageFor(model => model.startYear)
+    </div>
+
+    <div>
+        @Html.DisplayNameFor(model => model.additionalInfo)
+    </div>
+    <div>
+        @Html.EditorFor(model => model.additionalInfo)
+        @Html.ValidationMessageFor(model => model.additionalInfo)
+    </div>
+
+
+        <div>
+                <input type="submit" value="Save" />
+                @Html.ActionLink("Back", "MyProfile")
+            </div>
+
+}
+

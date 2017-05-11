@@ -1,0 +1,15 @@
+﻿@model PlugPool.ViewModels.Accounts.IndexViewModel
+
+@{
+    ViewBag.Title = "PendingApplications";
+}
+
+<h4>Pending Applications</h4>
+
+@Html.Partial("_Message")
+
+<div>
+    @Html.Partial("_Accounts", Model.Accounts)
+</div>
+
+

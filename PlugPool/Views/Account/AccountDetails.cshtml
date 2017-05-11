@@ -1,0 +1,37 @@
+﻿@model PlugPool.ViewModels.Accounts.DetailsViewModel
+
+@{
+    ViewBag.Title = "AccountDetails";
+}
+
+<h2>Account Details</h2>
+
+<div>
+    @Html.DisplayNameFor(model => model.firstName) :
+    @Html.DisplayFor(model => model.firstName)
+</div>
+
+<div>
+    @Html.DisplayNameFor(model => model.lastName) :
+    @Html.DisplayFor(model => model.lastName)
+</div>
+
+<div>
+    @Html.DisplayNameFor(model => model.email) :
+    @Html.DisplayFor(model => model.email)
+</div>
+
+<div>
+    @Html.DisplayNameFor(model => model.createDate) :
+    @Html.DisplayFor(model => model.createDate)
+</div>
+
+<div>
+    @Html.DisplayNameFor(model => model.updateDate) :
+    @Html.DisplayFor(model => model.updateDate)
+</div>
+
+<br /> @Html.ActionLink("Edit Account", "Edit", new { id = Model.accountID })
+<br /> @Html.ActionLink("Change Email", "ChangeEmail")
+<br /> @Html.ActionLink("Change Password", "EditPassword")
+<br /> @Html.ActionLink("Delete Account", "Delete", new { id = Model.accountID })

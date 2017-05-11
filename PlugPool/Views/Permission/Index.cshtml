@@ -1,0 +1,18 @@
+﻿@model PlugPool.ViewModels.Permissions.IndexViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+    @Html.Partial("_Message")
+
+    <div>
+        @Html.Partial("_Permissions", Model.Permissions)
+    </div>
+
+    <div>
+        <br />
+        @Html.ActionLink("Create", "Create")
+    </div>
+
+

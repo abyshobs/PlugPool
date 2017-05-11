@@ -1,0 +1,50 @@
+﻿@model PlugPool.ViewModels.Accounts.RegisterViewModel
+
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Register</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    @Html.Partial("_Message")
+
+    <div>
+        First Name :
+        @Html.EditorFor(x => x.firstName)
+        <br /> @Html.ValidationMessageFor(x => x.firstName)
+    </div>
+
+    <div>
+        Last Name :
+        @Html.EditorFor(x => x.lastName)
+        <br /> @Html.ValidationMessageFor(x => x.lastName)
+    </div>
+
+    <div>
+        Email :
+        @Html.EditorFor(x => x.email)
+        <br /> @Html.ValidationMessageFor(x => x.email)
+    </div>
+
+    <div>
+        Password :
+        @Html.PasswordFor(x => x.password)
+        <br /> @Html.ValidationMessageFor(x => x.password)
+    </div>
+
+    <div>
+        ConfirmPassword :
+        @Html.PasswordFor(x => x.confirmPassword)
+        <br /> @Html.ValidationMessageFor(x => x.confirmPassword)
+    </div>
+
+    <br />
+    <input type="submit" value="Sign Up" />
+   
+}
+
+

@@ -1,0 +1,26 @@
+﻿@model IEnumerable<PlugPool.Domain.Model.Permission>
+
+@{
+    ViewBag.Title = "_Permissions";
+}
+
+<h4>Permissions</h4>
+
+<div>
+    <table>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.name)
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
+
+
+

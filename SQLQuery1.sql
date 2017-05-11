@@ -1,0 +1,3 @@
+﻿USE master -- be sure that you're not on MYDB
+ALTER DATABASE PlugPool1 SET SINGLE_USER WITH ROLLBACK IMMEDIATE
+DROP DATABASE PlugPool1;

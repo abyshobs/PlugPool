@@ -1,0 +1,30 @@
+﻿@model PlugPool.ViewModels.Permissions.CreateViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+    <div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+
+            @Html.Partial("_Message")
+
+            <div>
+                First Name :
+                @Html.EditorFor(x => x.name)
+                <br /> @Html.ValidationMessageFor(x => x.name)
+            </div>
+
+            <br />
+            <input type="submit" value="Submit" />
+            <br />
+            <a href="@Url.Action("Index", "Permission")"> View All </a>
+        }
+    </div>
+
+

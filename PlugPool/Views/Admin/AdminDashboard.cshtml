@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "AdminDashboard";
+}
+
+@Html.Partial("_Message")
+
+<h2>AdminDashboard</h2>
+
+<div>
+    <a href="@Url.Action("Index", "Permission")">Permissions</a>
+    <br /> <a href="@Url.Action("Index", "Admin")">Admin Users</a>
+    <br /> <a href="@Url.Action("Index", "Job")">Jobs</a>
+    <br /> <a href="@Url.Action("UserAccounts", "Admin")">Accounts</a>
+    <br /> <a href="@Url.Action("PendingApplications", "Admin")">Pending Applications</a>
+</div>
+

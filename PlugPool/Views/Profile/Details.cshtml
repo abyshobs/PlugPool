@@ -1,0 +1,60 @@
+﻿@model PlugPool.ViewModels.Profiles.DetailsViewModel
+@{
+    ViewBag.Title = "Details";
+}
+
+@{
+    Layout = null;
+}
+
+<h4>Profile details</h4>
+
+<div>
+    @Html.DisplayNameFor(model => model.Job) <br/>
+    @Html.DisplayFor(model => model.Job.name)
+</div>
+<br />
+<div>
+    @Html.DisplayNameFor(model => model.businessName) <br />
+    @Html.DisplayFor(model => model.businessName)
+</div>
+<br />
+<div>
+    @Html.DisplayNameFor(model => model.location) <br />
+    @Html.DisplayFor(model => model.location)
+</div>
+<br />
+<div>
+    @Html.DisplayNameFor(model => model.description)<br />
+    @Html.DisplayFor(model => model.description)
+</div>
+<br />
+<div>
+    @Html.DisplayNameFor(model => model.startYear)<br />
+    @Html.DisplayFor(model => model.startYear)
+</div>
+<br />
+<div>
+    @Html.DisplayNameFor(model => model.website)<br />
+    @Html.DisplayFor(model => model.website)
+</div>
+<br />
+<div>
+    @Html.DisplayNameFor(model => model.youtube)<br />
+    @Html.DisplayFor(model => model.youtube)
+</div>
+<br />
+<div>
+    @Html.DisplayNameFor(model => model.additionalInfo)<br />
+    @Html.DisplayFor(model => model.additionalInfo)
+</div>
+<br />
+<div>
+    @Html.DisplayNameFor(model => model.userName)<br />
+    @Html.DisplayFor(model => model.userName)
+</div>
+
+
+
+
+

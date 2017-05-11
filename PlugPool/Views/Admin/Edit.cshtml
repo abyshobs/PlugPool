@@ -1,0 +1,37 @@
+﻿@model PlugPool.ViewModels.Admins.EditViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+
+    @Html.HiddenFor(model => model.accountPermissionID)
+    @Html.HiddenFor(model => model.accountID)
+
+    <div>
+        @Html.DisplayNameFor(model => model.email)
+    </div>
+    <div>
+        @Html.DisplayFor(model => model.email)
+    </div>
+
+    <div>
+        @Html.DisplayNameFor(model => model.permissionID)
+    </div>
+    <div>
+        @Html.DropDownListFor(m => m.permissionID, new SelectList(Model.Permissions, "permissionID", "name"), "Select a permission", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.permissionID, "", new { @class = "text-danger" })
+    </div>
+
+    <br />
+    <input type="submit" value="Submit" />
+    <div>
+        @Html.ActionLink("Back", "Index", "", new { @class = "btn btn-default" })
+    </div>
+}

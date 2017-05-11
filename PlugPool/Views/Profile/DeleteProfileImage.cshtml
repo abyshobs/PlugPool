@@ -1,0 +1,48 @@
+﻿@model PlugPool.ViewModels.Profiles.ImageDeleteViewModel
+
+@{
+    ViewBag.Title = "DeleteProfileImage";
+}
+
+<h4>Delete Image</h4>
+
+<div>
+    <h4>Are you sure you want to remove this image?</h4>
+
+    <div>
+        @Html.DisplayNameFor(model => model.image)
+    </div>
+    <div>
+        @Html.DisplayFor(model => model.image)
+    </div>
+</div>
+
+<div>
+    @Html.DisplayNameFor(model => model.caption)
+</div>
+<div>
+    @Html.DisplayFor(model => model.caption)
+</div>
+
+<div>
+    @Html.DisplayNameFor(model => model.createDate)
+</div>
+<div>
+    @Html.DisplayFor(model => model.createDate)
+</div>
+
+
+<div>
+    @using (Html.BeginForm())
+    {
+        <input type="submit" value="Delete" class="btn btn-default" />
+        @Html.ActionLink("Back", "ProfileImageIndex", new { @class = "btn btn-default" })
+    }
+</div>
+
+
+
+
+
+
+

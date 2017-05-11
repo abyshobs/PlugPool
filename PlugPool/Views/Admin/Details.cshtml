@@ -1,0 +1,33 @@
+﻿@model PlugPool.ViewModels.Admins.DetailsViewModel
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    @Html.DisplayNameFor(model => model.email)
+    @Html.DisplayFor(model => model.email)
+</div>
+
+<div>
+    @Html.DisplayNameFor(model => model.permissionID)
+    @Html.DisplayFor(model => model.Permission.name)
+</div>
+
+<div>
+    @Html.DisplayNameFor(model => model.createDate)
+    @Html.DisplayFor(model => model.createDate)
+</div>
+
+<div>
+    @Html.DisplayNameFor(model => model.updateDate)
+    @Html.DisplayFor(model => model.updateDate)
+</div>
+
+<div>
+    <a href="@Url.Action("Edit", "Admin", new { id = Model.accountPermissionID })">Edit</a>
+    <br />
+    <a href="@Url.Action("Delete", "Admin", new { id = Model.accountPermissionID })">Delete</a>
+</div>
+

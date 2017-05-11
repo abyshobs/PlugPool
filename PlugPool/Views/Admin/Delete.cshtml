@@ -1,0 +1,50 @@
+﻿@model PlugPool.ViewModels.Admins.DeleteViewModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<div>
+    <h5>Are you sure you want to remove this admin user?</h5>
+
+    <div>
+        @Html.DisplayNameFor(model => model.email)
+    </div>
+    <div>
+        @Html.DisplayFor(model => model.email)
+    </div>
+</div>
+
+<div>
+    @Html.DisplayNameFor(model => model.permissionID)
+</div>
+<div>
+    @Html.DisplayFor(model => model.Permission.name)
+</div>
+
+<div>
+    @Html.DisplayNameFor(model => model.createDate)
+</div>
+<div>
+    @Html.DisplayFor(model => model.createDate)
+</div>
+
+<div>
+    @Html.DisplayNameFor(model => model.updateDate)
+</div>
+<div>
+    @Html.DisplayFor(model => model.updateDate)
+</div>
+
+<div>
+    @using (Html.BeginForm())
+    {
+        <input type="submit" value="Delete" class="btn btn-default" />
+        @Html.ActionLink("Back", "Details", new { id = Model.accountPermissionID }, new { @class = "btn btn-default" })
+    }
+</div>
+
+
+

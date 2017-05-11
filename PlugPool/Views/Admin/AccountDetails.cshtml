@@ -1,0 +1,91 @@
+﻿@model PlugPool.ViewModels.Accounts.DetailsViewModel
+
+@{
+    ViewBag.Title = "AccountDetails";
+}
+
+<h4>Account Details</h4>
+
+@Html.Partial("_Message")
+
+<div>
+    @Html.DisplayNameFor(model => model.image)
+    @Html.DisplayFor(model => model.image)
+</div>
+
+<div>
+    @Html.DisplayNameFor(model => model.firstName)
+    @Html.DisplayFor(model => model.firstName)
+</div>
+
+<div>
+    @Html.DisplayNameFor(model => model.lastName)
+    @Html.DisplayFor(model => model.lastName)
+</div>
+
+<div>
+    @Html.DisplayNameFor(model => model.email)
+    @Html.DisplayFor(model => model.email)
+</div>
+
+<div>
+    @Html.DisplayNameFor(model => model.createDate)
+    @Html.DisplayFor(model => model.createDate)
+</div>
+
+
+<h4>Profile Details</h4>
+
+<div>
+    @Html.DisplayNameFor(model => model.Profile.Job.name)
+    @Html.DisplayFor(model => model.Profile.Job.name)
+</div>
+
+<div>
+    @Html.DisplayNameFor(model => model.businessName)
+    @Html.DisplayFor(model => model.businessName)
+</div>
+
+<div>
+    @Html.DisplayNameFor(model => model.location)
+    @Html.DisplayFor(model => model.location)
+</div>
+
+<div>
+    @Html.DisplayNameFor(model => model.description)
+    @Html.DisplayFor(model => model.description)
+</div>
+
+<div>
+    @Html.DisplayNameFor(model => model.startYear)
+    @Html.DisplayFor(model => model.startYear)
+</div>
+
+<div>
+    @Html.DisplayNameFor(model => model.website)
+    @Html.DisplayFor(model => model.website)
+</div>
+
+<div>
+    @Html.DisplayNameFor(model => model.youtube)
+    @Html.DisplayFor(model => model.youtube)
+</div>
+
+<div>
+    @Html.DisplayNameFor(model => model.additionalInfo)
+    @Html.DisplayFor(model => model.additionalInfo)
+</div>
+
+<div>
+    @Html.DisplayNameFor(model => model.username)
+    @Html.DisplayFor(model => model.username)
+</div>
+
+<h4>Images</h4>
+
+<div>
+    <a href="@Url.Action("AcceptProfile", "Admin", new { id = Model.accountID})">Accept</a>
+    <br />
+    <a href="@Url.Action("Create", "Note", new { id = Model.accountID })">Decline</a>
+</div>
+

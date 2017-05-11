@@ -1,0 +1,41 @@
+﻿@model IEnumerable<PlugPool.Domain.Model.AccountPermission>
+
+@{
+    ViewBag.Title = "_Admins";
+}
+
+<h4>Admin Users</h4>
+
+<div>
+    <table>
+        <tr>
+            <th>Permission</th>
+            <th></th>
+            <th></th>
+            <th>Email</th>
+        </tr>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Permission.name)
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.email)
+                    </td>
+                    <td></td>
+                    <td><a href="@Url.Action("Details", "Admin", new { id = item.accountPermissionID })">Details</a></td>
+                    <td></td>
+                    <td><a href="@Url.Action("Edit", "Admin", new { id = item.accountPermissionID })">Edit</a></td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
+
+

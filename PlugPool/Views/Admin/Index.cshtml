@@ -1,0 +1,18 @@
+﻿@model PlugPool.ViewModels.Admins.IndexViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@Html.Partial("_Message")
+
+<div>
+    @Html.Partial("_Admins", Model.AccountPermissions)
+</div>
+
+<div>
+    <br />
+    @Html.ActionLink("Create", "Create")
+</div>
+

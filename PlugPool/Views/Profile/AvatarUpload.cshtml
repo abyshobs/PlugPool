@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "ProfileImageUpload";
+}
+
+
+@Html.Partial("_Message")
+<h4 class="page-header">Upload Profile photo</h4>
+
+@using (Html.BeginForm("AvatarUpload", "Profile", FormMethod.Post,
+                            new { enctype = "multipart/form-data" }))
+{
+    <div>
+        <input type="file" name="file" id="file" style="width: 100%;" />
+        <br />
+        <input type="submit" value="Upload" class="submit" />
+    </div>
+}
+
+<div>
+    @Html.Action("Details", "Profile", new { area = "" })
+</div>

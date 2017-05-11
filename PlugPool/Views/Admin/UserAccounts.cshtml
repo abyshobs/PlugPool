@@ -1,0 +1,17 @@
+﻿@model PlugPool.ViewModels.Accounts.IndexViewModel
+
+@{
+    ViewBag.Title = "UserAccounts";
+}
+
+<h4>User Accounts</h4>
+
+@{
+    ViewBag.Title = "User Accounts";
+}
+
+@Html.Partial("_Message")
+
+<div>
+    @Html.Partial("_Accounts", Model.Accounts)
+</div>

@@ -1,0 +1,29 @@
+﻿@model PlugPool.ViewModels.Accounts.LoginViewModel
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@Html.Partial("_Message")
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <div>
+        Email :
+        @Html.EditorFor(x => x.email)
+        <br /> @Html.ValidationMessageFor(x => x.email)
+    </div>
+
+    <div>
+        Password :
+        @Html.EditorFor(x => x.password)
+        <br /> @Html.ValidationMessageFor(x => x.password)
+    </div>
+
+    <input type="submit" value="Log in" />
+    <br />    <a href="@Url.Action("RecoverPassword", "Account")"> Forgotten your Password? </a>
+}

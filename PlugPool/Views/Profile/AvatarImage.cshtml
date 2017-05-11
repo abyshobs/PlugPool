@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "ProfileImage";
+}
+
+<div>
+    <img src="@Url.Action("AvatarImg", "Profile")" height="150" width="150" />
+</div>
+<div>
+    <a href="@Url.Action("AvatarUpload", "Profile")"><span>Change pic</span></a> | 
+
+    <a href="@Url.Action("AddProfileImage", "Profile")"><span>Next</span></a>
+</div>
+
+@Html.Action("Details", "Profile", new { area = "" })
+
+

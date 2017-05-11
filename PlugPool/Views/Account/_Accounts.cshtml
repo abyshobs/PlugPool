@@ -1,0 +1,50 @@
+﻿@model IEnumerable<PlugPool.Domain.Model.Account>
+@{
+    ViewBag.Title = "_Accounts";
+}
+
+<h2>Accounts</h2>
+
+<div>
+    <table>
+        <tr>
+            <th>Job</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Join date</th>
+            <th></th>
+        </tr>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Profile.Job.name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.firstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.lastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.createDate)
+                    </td>
+
+                    <td><a href="@Url.Action("Details", "Admin", new { id = item.accountID })">Details</a></td>              
+           
+                     </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
+
+
+
+

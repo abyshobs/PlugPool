@@ -1,0 +1,39 @@
+﻿@model PlugPool.ViewModels.Accounts.EditViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit Account</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+
+    @Html.HiddenFor(model => model.accountID)
+
+    <div>
+        @Html.LabelFor(model => model.firstName)
+        <div>
+            @Html.EditorFor(model => model.firstName)
+            @Html.ValidationMessageFor(model => model.firstName)
+        </div>
+    </div>
+
+    <div>
+        @Html.LabelFor(model => model.lastName)
+        <div>
+            @Html.EditorFor(model => model.lastName)
+            @Html.ValidationMessageFor(model => model.lastName)
+        </div>
+    </div>
+
+
+    <br />
+    <input type="submit" value="Submit" />
+
+}
+
+
+

@@ -1,0 +1,56 @@
+﻿@model PlugPool.ViewModels.Profiles.DetailsViewModel
+
+@{
+    ViewBag.Title = "UserProfileHomepage";
+}
+
+<h2>Profile Homepage</h2>
+
+@Html.Partial("_Message")
+
+<div>
+    @Html.DisplayFor(model => model.Account.firstName)  @Html.DisplayFor(model => model.Account.lastName)  
+</div>
+
+<div>
+    @Html.DisplayNameFor(model => model.businessName) <br />
+    @Html.DisplayFor(model => model.businessName)
+</div>
+
+<div>
+    <img src="@Url.Action("AvatarImg", "Profile")" height="150" width="150" />
+</div>
+
+<div>
+    @Html.DisplayNameFor(model => model.description) <br />
+    @Html.DisplayFor(model => model.description)
+</div>
+
+<div>
+    @Html.DisplayNameFor(model => model.location) <br />
+    @Html.DisplayFor(model => model.location)
+</div>
+
+<div>
+    @Html.DisplayNameFor(model => model.startYear) <br />
+    @Html.DisplayFor(model => model.startYear)
+</div>
+
+<div>
+    @Html.DisplayNameFor(model => model.website) <br />
+    @Html.DisplayFor(model => model.website)
+</div>
+
+<div>
+    @Html.DisplayNameFor(model => model.youtube) <br />
+    @Html.DisplayFor(model => model.youtube)
+</div>
+
+<div>
+    @Html.DisplayNameFor(model => model.additionalInfo) <br />
+    @Html.DisplayFor(model => model.additionalInfo)
+</div>
+
+<div>
+    @Html.Action("ProfileImageIndex", "Profile", new { area = "" })
+</div>

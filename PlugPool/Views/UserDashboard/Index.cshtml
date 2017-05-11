@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>User Dashboard</h2>
+
+Hello User ! <br/>
+
+<div>
+    <a href="@Url.Action("MyProfile", "Profile")">View Profile</a> <br/>
+    <a href="@Url.Action("AccountDetails", "Account")">Account Settings</a> <br />
+    <a href="@Url.Action("ProfileImageIndex", "Profile")">Images</a> <br />
+    <a href="@Url.Action("Logout", "Account")">Logout</a>
+</div>
+
